@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
+import jsonfield
 
 from products.models import Products
 
@@ -9,7 +10,7 @@ class Order(models.Model):
     buyer = models.ForeignKey(User, on_delete=models.CASCADE)
     firstName = models.CharField(max_length=200)
     lastName = models.CharField(max_length=200)
-    phone = models.CharField(max_length=12)
+    phone = models.CharField(max_length=14)
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=20)
     pin = models.CharField(max_length=6)
